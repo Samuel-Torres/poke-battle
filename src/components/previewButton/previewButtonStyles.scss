@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.previewCardContainer {
+  @include hoverEffect(0.9);
+  .pokeBtn {
+    all: unset;
+    width: 100px;
+    padding: 5px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.6rem;
+
+    .pokeImage {
+      width: 100px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border: none;
+      background-color: $pokeYellow;
+      color: black;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    }
+  }
+}

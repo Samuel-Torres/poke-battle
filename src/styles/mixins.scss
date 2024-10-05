@@ -1,0 +1,75 @@
+@mixin flexRowCent() {
+  display: flex;
+  justify-content: center;
+}
+@mixin flexRowAround() {
+  display: flex;
+  justify-content: space-around;
+}
+@mixin flexRowBetween() {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flexAlignCent() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCol() {
+  display: flex;
+  flex-direction: column;
+}
+@mixin justAlignCent() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin error() {
+  @include flexAlignCent();
+  height: 100dvh;
+  flex-direction: column;
+}
+@mixin hoverEffect($initOpacity: 0.5) {
+  transition: all 0.1s ease-in-out;
+  opacity: $initOpacity;
+
+  &:hover {
+    cursor: pointer;
+    transition-timing-function: ease-in;
+    transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@mixin bounce() {
+  animation: bounce 2s infinite;
+}
+
+@mixin mobileAndUp {
+  @media (min-width: $mobileAndUp) {
+    @content;
+  }
+}
+
+@mixin tabletAndUp {
+  @media (min-width: $tabletAndUp) {
+    @content;
+  }
+}
+
+@mixin desktopAndUp {
+  @media (min-width: $desktopAndUp) {
+    @content;
+  }
+}

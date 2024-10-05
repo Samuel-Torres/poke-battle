@@ -1,0 +1,81 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+@keyframes userAttackShift {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+@keyframes opponentAttackShift {
+  0% {
+    transform: translateX(0); 
+  }
+  50% {
+    transform: translateX(-60%); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+.battleCardContainer {
+  width: 50%;
+  @include flexRowBetween();
+  flex-direction: column;
+  .characterInfo {
+    background-color: $pokeYellow;
+    @include mobileAndUp {
+      width: 50%;
+    }
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 5px;
+
+    p {
+      font-weight: bolder;
+      @include tabletAndUp {
+        font-size: 2.8rem;
+      }
+      font-size: 1.4rem;
+      line-height: 0;
+      color: black;
+      text-align: center;
+      text-wrap: wrap;
+    }
+  }
+  .userBounceAnimation {
+    @include bounce();
+  }
+
+  .opponentBounceAnimation {
+    @include bounce();
+  }
+
+  .userAttack {
+    animation: userAttackShift 0.5s ease-in-out; 
+    animation-fill-mode: forwards;  
+    // animation-delay: .5s;
+  }
+
+  .opponentAttack {
+    animation: opponentAttackShift 0.5s ease-in-out; 
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;  
+  }
+
+  .image {
+    @include tabletAndUp {
+      width: 80%;
+    }
+    width: 100%;
+  }
+
+}

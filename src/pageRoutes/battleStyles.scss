@@ -1,0 +1,105 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.battleContainer {
+  @include flexCol();
+  height: 95dvh;
+  justify-content: space-between;
+
+  .infoPanel {
+
+    .missed {
+      @include flexCol();
+      .failEmoji {
+        font-size: 3rem;
+      }
+    }
+
+    h3 {
+      color: white;
+    }
+  }
+
+  .controlPanel {
+    flex-direction: column;
+    align-items: center;
+    
+    
+    .chooseNewBtn {
+      all: unset;
+      width: 100px;
+      padding: 5px;
+      margin: 50px 0px 0px 0px;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.6rem;
+      
+      &:hover {
+        cursor: pointer;
+        border: none;
+        background-color: $pokeYellow;
+        color: black;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      }
+    }
+    
+    h2 {
+      color: white;
+    }
+
+    .controls {
+      @include flexRowAround();
+      padding: 5px 5px;
+      flex-wrap: wrap;
+      .attackBtn {
+        all: unset;
+        border: 2px solid white;;
+        border-radius: 5px;
+        @include hoverEffect(0.9);
+        max-width: 200px;
+        min-width: 100px;
+        width: 22%;
+        font-size: 1.4rem;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: 10px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $pokeYellow;
+          border: none;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+          color: black;
+        }
+      }
+    }
+
+  }
+
+  .bottomControls {
+    margin-top: 10px;
+     .musicControlContainer {
+      .musicControlIcons {
+        @include hoverEffect(0.8);
+        width: 40px;
+        margin: 10px 30px;
+      }
+    }
+  }
+    .pokeContainer {
+      position: relative;
+    @include flexRowCent();
+    background-image: url("https://res.cloudinary.com/dvz91qyth/image/upload/v1727987742/pokemon/unova_league_battlefield_background_by_willdinomaster55_dey8ror-pre_pag2w4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+
+    .vs {
+      margin-top: 50px;
+      width: 120px;
+      position: absolute;
+    }
+  }
+}

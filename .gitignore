@@ -1,0 +1,39 @@
+# Dependency directories
+/node_modules
+
+# Build output
+/dist
+/build
+/.next
+/out
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Dependency manager files
+.pnpm-store/
+
+# Testing coverage
+/coverage
+
+# Temporary files
+.temp
+.cache
+.next/cache

@@ -1,0 +1,127 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.selectionBox {
+  background-image: url("https://res.cloudinary.com/dvz91qyth/image/upload/v1727911268/pokemon/Pokemon_f45a58_gc32zf.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 575px;
+
+
+  .blackBorder {
+    margin: 0 auto;
+    max-width: 330px;
+    border-radius: 5px;
+    perspective: 1000px;
+
+
+    .selectCard {
+      position: relative;
+      width: 300px;
+      height: 500px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease-in-out;
+      transform-origin: center right;
+      border-radius: 5px;
+
+      &.flipped {
+        transform: rotateY(180deg);
+      }
+
+      .cardFront,
+      .cardBack {
+        position: absolute;
+        backface-visibility: hidden;
+        border-radius: 5px;
+      }
+
+      .cardFront {
+        background-image: url("https://res.cloudinary.com/dvz91qyth/image/upload/v1727967763/pokemon/edc7c6437653ab73346c7bf08c884077_kcrc6s.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 350px;
+        height: 500px;
+        padding: 5px;
+
+        .nameContainer {
+          @include flexRowBetween();
+          padding: 0px 55px 0px 30px;
+          margin-top: 20px;
+
+          p {
+            line-height: 0;
+            font-weight: bold;
+          }
+        }
+
+        .imgContainer {
+          .pokemonImg {
+            width: 200px;
+            margin-top: 20px;
+            border-radius: 5px;
+            @include bounce();
+          }
+        }
+
+        .bottomSection {
+          margin: 30px 30px;
+          padding: 0px 15px;
+
+          p {
+            margin: 0;
+            font-weight: bold;
+          }
+
+          button {
+            @include hoverEffect(0.9);
+            all: unset;
+            height: 50px;
+            width: 100px;
+            padding: 5px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.6rem;
+
+
+            &:hover {
+              cursor: pointer;
+              background-color: $pokeYellow;
+              border: none;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            }
+          }
+        }
+      }
+
+      .cardBack {
+        background-image: url("https://your-back-image-url-here");
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+        transform: rotateY(180deg);
+        width: 350px;
+        height: 500px;
+
+        .backImage {
+          max-width: 350px;
+          height: 500px;
+        }
+      }
+    }
+  }
+}
